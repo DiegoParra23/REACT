@@ -8,7 +8,8 @@ describe('Pruebas en 08-imp-exp', () => {
         
         const id = 1;
         const hero = getHeroeById( id );
-        
+
+        //toEqual nos sirve para comparar cuando estamos evaluando un objeto con otro
         expect( hero ).toEqual({ id: 1, name: 'Batman', owner: 'DC' });
     });
 
@@ -16,27 +17,30 @@ describe('Pruebas en 08-imp-exp', () => {
         
         const id = 100;
         const hero = getHeroeById( id );
+        //toBeFalsy hace referencia a que el valor esperado sea un null, undefined or false
         expect( hero ).toBeFalsy();
 
     });
+    test('getHerosbyOwner debe regresar los heroes de DC',()=>{
+
+        const owner=('DC')
+
+        const hero = getHeroesByOwner(owner)
+
+        console.log(hero)
+
+        expect(hero.length).toBe(3);
+        expect(hero).toEqual(  [ 
+        { id: 1, name: 'Batman', owner: 'DC' },
+        { id: 3, name: 'Superman', owner: 'DC' },
+        { id: 4, name: 'Flash', owner: 'DC' }
+         ]  
+          )
+          expect(hero).toEqual(hero.filter((heroe)=>heroe.owner ===owner))
+       
 
 
-    // Tarea:
-    test('getHeroesByOwner debe de regresar heroes de DC', () => {
-        
-        const owner = 'DC';
-        const heroes = getHeroesByOwner( owner );
-
-        expect( heroes.length ).toBe( 3 );
-        expect( heroes ).toEqual([
-            { id: 1, name: 'Batman', owner: 'DC' },
-            { id: 3, name: 'Superman', owner: 'DC' },
-            { id: 4, name: 'Flash', owner: 'DC' }
-        ]);
-        expect( heroes ).toEqual( heroes.filter( (heroe) => heroe.owner === owner ) )
-
-
-    });
+    })
 
     test('getHeroesByOwner debe de regresar heroes de Marvel', () => {
         

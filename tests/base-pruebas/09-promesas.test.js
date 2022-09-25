@@ -3,6 +3,8 @@ import { getHeroeByIdAsync } from '../../src/base-pruebas/09-promesas';
 
 describe('Pruebas en 09-promesas', () => {
     
+    // cuando se trabaja con pruebas asincronas , es necesario avisar cuando termina la prueba usando 
+    //done
     test('getHeroeByIdAsync debe de retornar un héroe', (done) => {
         
         const id = 1;

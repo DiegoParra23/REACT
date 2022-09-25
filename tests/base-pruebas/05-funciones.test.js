@@ -17,17 +17,17 @@ describe('Pruebas en 05-funciones', () => {
     });
 
 
-    test('getUsuarioActivo debe de retornar un objeto', () => {
-        
-        const name = 'Fernando';
+    test('GetUserActivos debe retornar un objeto',()=>{
 
-        const user = getUsuarioActivo( name );
-        
-        expect( user ).toStrictEqual({
+        const nombre=("Diego")
+
+       
+        const user = getUsuarioActivo(nombre);
+
+        expect(user).toStrictEqual({
             uid: 'ABC567',
-            username: name
-        });
-
-    });
-
+            username: nombre 
+        })
+    
+    })
 });

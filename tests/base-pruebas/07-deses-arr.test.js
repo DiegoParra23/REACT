@@ -7,9 +7,11 @@ describe('Pruebas en 07-deses-arr', () => {
         
         const [ letters, numbers ] = retornaArreglo();
         
+        //busqueda para un valor en especifico
         expect( letters ).toBe( 'ABC' );
         expect( numbers ).toBe( 123 );
 
+        // busqueda para un tipo de valor
         expect(typeof letters).toBe('string')
         expect(typeof numbers).toBe('number')
 
